@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/css/tw-elements.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          fontFamily: {
+            sans: ["Roboto", "sans-serif"],
+            body: ["Roboto", "sans-serif"],
+            mono: ["ui-monospace", "monospace"],
+          },
+        },
+        corePlugins: {
+          preflight: false,
+        },
+      };
+    </script>
+    <style>
+      .card-img {
+        transition: transform 0.3s ease;
+      }
+      .card:hover .card-img {
+        transform: scale(1.05);
+      }
+      :root {
+        --main-color: #217074;
+        --secondary-color: #6db5c2;
+        --third-color: #8b9d77;
+        --forth-color: #e7eaef;
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--third-color:)]">
+    <nav class="bg-[var(--secondary-color)]">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <!-- Logo/Brand Name -->
+        <div class="text-2xl font-bold text-[var(--forth-color)]">
+          <a
+            href="index.html"
+            class="hover:scale-110 transform transition duration-300 ease-in-out"
+            >Travel Agency</a
+          >
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex space-x-8 items-center">
+          <a
+            href="index.html"
+            class="text-[var(--forth-color)] hover:text-white transition duration-300 ease-in-out px-3 py-2 rounded-md"
+            >Home</a
+          >
+          <a
+            href="#packs"
+            class="text-[var(--forth-color)] hover:text-white transition duration-300 ease-in-out px-3 py-2 rounded-md"
+            >Destinations</a
+          >
+          <a
+            href="#tours"
+            class="text-[var(--forth-color)] hover:text-white transition duration-300 ease-in-out px-3 py-2 rounded-md"
+            >Tours</a
+          >
+          <a
+            href="contact.html"
+            class="text-[var(--forth-color)] hover:text-white transition duration-300 ease-in-out px-3 py-2 rounded-md"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="md:hidden flex items-center">
+          <input type="checkbox" id="menu-toggle" class="peer hidden" />
+          <label
+            for="menu-toggle"
+            class="cursor-pointer text-[var(--forth-color)] hover:text-white transition duration-300 ease-in-out"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </label>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div class="hidden peer-checked:block md:hidden bg-white shadow-lg">
+        <a
+          href="index.html"
+          class="block px-4 py-3 text-gray-800 hover:bg-[var(--secondary-color)] hover:text-white transition duration-300 ease-in-out"
+          >Home</a
+        >
+        <a
+          href="#packs"
+          class="block px-4 py-3 text-gray-800 hover:bg-[var(--secondary-color)] hover:text-white transition duration-300 ease-in-out"
+          >Destinations</a
+        >
+        <a
+          href="#tours"
+          class="block px-4 py-3 text-gray-800 hover:bg-[var(--secondary-color)] hover:text-white transition duration-300 ease-in-out"
+          >Tours</a
+        >
+        <a
+          href="contact.html"
+          class="block px-4 py-3 text-gray-800 hover:bg-[var(--secondary-color)] hover:text-white transition duration-300 ease-in-out"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <header id="home">
+      <div class="relative h-[550px] overflow-hidden">
+        <!-- Video Background -->
+        <div class="relative h-screen">
+            <div class="h-screen bg-cover bg-center" style="background-image: url('cover.jpg');">
+                <!-- Your content here -->
+              </div>
+              
+
+          <!-- Overlay -->
+          <div
+            class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black/60 bg-fixed"
+          >
+            <div class="flex h-full items-center justify-center">
+              <div class="px-6 text-center text-white md:px-12">
+                <h1 class="mb-6 text-5xl font-bold">Travel</h1>
+                <h3 class="mb-9 text-3xl font-bold">
+                  Discover the world with the best travel agency
+                </h3>
+                <button
+                  type="button"
+                  class="inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-300 hover:text-neutral-200 focus:border-neutral-300 focus:text-neutral-200 focus:outline-none focus:ring-0 active:border-neutral-300 active:text-neutral-200 dark:hover:bg-neutral-600 dark:focus:bg-neutral-600"
+                  data-twe-ripple-init
+                  data-twe-ripple-color="light"
+                >
+                  Call to action
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="packs"
+      class="container mx-auto mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6"
+    >
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img
+          src="miamijpg.jpg"
+          alt="Image"
+          class="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-110"
+        />
+        <div class="p-4">
+          <h2 class="text-xl font-semibold mb-2">MIAMI</h2>
+          <div class="flex items-center mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </div>
+          <p class="text-gray-700">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta,
+            accusantium?
+          </p>
+          <a href="" class="text-blue-500 hover:underline">Learn More</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="max-w-3xl mx-auto">
+          <img
+            src="tunisie.jpg"
+            alt="Image"
+            class="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-110"
+          />
+        </div>
+        <div class="p-4">
+          <h2 class="text-xl font-semibold mb-2">TUNISIE</h2>
+          <div class="flex items-center mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </div>
+          <p class="text-gray-700">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta,
+            accusantium?
+          </p>
+          <a href="" class="text-blue-500 hover:underline">Learn More</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img
+          src="turkey.jpg"
+          alt="Image"
+          class="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-110"
+        />
+        <div class="p-4">
+          <h2 class="text-xl font-semibold mb-2">TURKEY</h2>
+          <div class="flex items-center mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </div>
+          <p class="text-gray-700">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta,
+            accusantium?
+          </p>
+          <a href="" class="text-blue-500 hover:underline">Learn More</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img
+          src="southafricajpg.jpg"
+          alt="Image"
+          class="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-110"
+        />
+        <div class="p-4">
+          <h2 class="text-xl font-semibold mb-2">SOUTH AFRICA</h2>
+          <div class="flex items-center mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500 mr-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-yellow-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </div>
+          <p class="text-gray-700">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta,
+            accusantium?
+          </p>
+          <a href="" class="text-blue-500 hover:underline">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="tours" class="container mx-auto p-6">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">
+        Tour Packages
+      </h2>
+
+      <div class="flex flex-col md:flex-row md:space-x-8">
+        <!-- Left Column -->
+        <div class="md:w-1/2 space-y-4">
+          <div class="border rounded-lg">
+            <input type="checkbox" id="tour1" class="peer hidden" />
+            <label
+              for="tour1"
+              class="flex justify-between items-center p-4 cursor-pointer bg-[var(--secondary-color)] text-white font-medium rounded-lg"
+            >
+              <span>Tropical Paradise Getaway</span>
+              <svg
+                class="w-6 h-6 transition-transform transform peer-checked:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </label>
+            <div class="p-4 bg-gray-100 hidden peer-checked:block">
+              <div class="flex space-x-10">
+                <div>
+                  <img
+                    src="pack1.jpg"
+                    alt="Image"
+                    class="w-50 h-48 object-cover"
+                  />
+                </div>
+                <div class="my-1 space-y-4">
+                  <p>
+                    Experience thrilling water sports and vibrant nightlife.
+                  </p>
+                  <p>Escape to a sun-soaked island with pristine beaches.</p>
+                  <p>Enjoy luxurious accommodations and endless ocean views.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border rounded-lg">
+            <input type="checkbox" id="tour2" class="peer hidden" />
+            <label
+              for="tour2"
+              class="mb-4 flex justify-between items-center p-4 cursor-pointer bg-[var(--secondary-color)] text-white font-medium rounded-lg"
+            >
+              <span>European Cultural Adventure</span>
+              <svg
+                class="w-6 h-6 transition-transform transform peer-checked:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </label>
+            <div class="p-4 bg-gray-100 hidden peer-checked:block">
+              <div class="flex space-x-10">
+                <div>
+                  <img
+                    src="pack2.jpg"
+                    alt="Image"
+                    class="w-50 h-48 object-cover"
+                  />
+                </div>
+                <div class="my-1 space-y-4">
+                  <p>
+                    Explore the historic cities of Europe, from Paris to Rome.
+                  </p>
+                  <p>
+                    Discover world-renowned museums and architectural wonders.
+                  </p>
+                  <p>
+                    Savor gourmet cuisine and immerse yourself in local
+                    traditions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="md:w-1/2 space-y-4">
+          <div class="border rounded-lg">
+            <input type="checkbox" id="tour4" class="peer hidden" />
+            <label
+              for="tour4"
+              class="flex justify-between items-center p-4 cursor-pointer bg-[var(--secondary-color)] text-white font-medium rounded-lg"
+            >
+              <span>Safari Expedition in Africa</span>
+              <svg
+                class="w-6 h-6 transition-transform transform peer-checked:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </label>
+            <div class="p-4 bg-gray-100 hidden peer-checked:block">
+              <div class="flex space-x-10">
+                <div>
+                  <img
+                    src="pack3.jpg"
+                    alt="Image"
+                    class="w-50 h-48 object-cover"
+                  />
+                </div>
+                <div class="my-1 space-y-4">
+                  <p>
+                    Witness the majestic wildlife of Africa on a guided safari.
+                  </p>
+                  <p>Stay in eco-friendly lodges surrounded by nature.</p>
+                  <p>
+                    Capture breathtaking photos of the Big Five in their natural
+                    habitat.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border rounded-lg">
+            <input type="checkbox" id="tour5" class="peer hidden" />
+            <label
+              for="tour5"
+              class="flex justify-between items-center p-4 cursor-pointer bg-[var(--secondary-color)] text-white font-medium rounded-lg"
+            >
+              <span>Mountain Retreat in the Alps</span>
+              <svg
+                class="w-6 h-6 transition-transform transform peer-checked:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </label>
+            <div class="p-4 bg-gray-100 hidden peer-checked:block">
+              <div class="flex space-x-10">
+                <div>
+                  <img
+                    src="pack4.jpg"
+                    alt="Image"
+                    class="w-50 h-48 object-cover"
+                  />
+                </div>
+                <div class="my-1 space-y-4">
+                  <p>Unwind in a cozy chalet with panoramic mountain views.</p>
+                  <p>
+                    Ski down world-class slopes or hike through scenic trails.
+                  </p>
+                  <p>Indulge in fine dining and relax in luxurious spas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!-- Footer container -->
+<footer class="bg-gray-100 text-white text-center">
+    <div class="container mx-auto pt-9 px-6">
+        <!-- Social media icons container -->
+        <div class="mb-6 flex justify-center space-x-4">
+            <!-- Facebook Icon -->
+            <a href="#!" type="button"
+                class="rounded-full bg-transparent p-3 text-[var(--secondary-color)] transition duration-150 ease-in-out  focus:outline-none focus:ring-0"
+                data-twe-ripple-init>
+                <span class="w-5 h-5 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 320 512">
+                        <path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+                    </svg>
+                </span>
+            </a>
+  
+            <!-- Twitter Icon -->
+            <a href="#!" type="button"
+                class="rounded-full bg-transparent p-3 text-[var(--secondary-color)] transition duration-150 ease-in-out  focus:outline-none focus:ring-0"
+                data-twe-ripple-init>
+                <span class="w-5 h-5 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                        <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                    </svg>
+                </span>
+            </a>
+  
+            <!-- Instagram Icon -->
+            <a href="#!" type="button"
+                class="rounded-full bg-transparent p-3 text-[var(--secondary-color)] transition duration-150 ease-in-out  focus:outline-none focus:ring-0"
+                data-twe-ripple-init>
+                <span class="w-5 h-5 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 488 512">
+                        <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
+                    </svg>
+                </span>
+            </a>
+  
+       
+            
+        </div>
+        <!-- Footer text -->
+        <p class="mb-0 text-sm text-[var(--secondary-color)]">© 2024 Travel agency. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/js/tw-elements.umd.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+    rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/tw-elements/css/tw-elements.min.css" />
+  <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        fontFamily: {
+          sans: ["Roboto", "sans-serif"],
+          body: ["Roboto", "sans-serif"],
+          mono: ["ui-monospace", "monospace"],
+        },
+      },
+      corePlugins: {
+        preflight: false,
+      },
+    };
+  </script>
+  <style>
+ .card-img {
+  transition: transform 0.3s ease;
+}
+.card:hover .card-img {
+  transform: scale(1.05);
+}
+:root {
+    --main-color: #217074;
+    --secondary-color: #6db5c2;
+    --third-color: #8B9D77;
+    --forth-color: #E7EAEF;
+  }
+</style>
+</head>
+<body class="bg-[var(--third-color:)]">
+    <nav class="bg-[var(--secondary-color)]">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo/Brand Name -->
+            <div class="text-2xl font-bold text-[var(--forth-color)]">
+                <a href="index.html" class="hover:scale-110 transform transition duration-300 ease-in-out">Travel Agency</a>
+            </div>
+    
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-[var(--forth-color)] hover:text-white transition duration-300 ease-in-out px-3 py-2 rounded-md">Home</a>
+                <a href="index.html" class="text-[var(--forth-color)] hover:text-white transition duration-300 ease-in-out px-3 py-2 rounded-md">Destinations</a>
+                <a href="index.html" class="text-[var(--forth-color)] hover:text-white transition duration-300 ease-in-out px-3 py-2 rounded-md">Tours</a>
+                <a href="contact.html" class="text-[var(--forth-color)] hover:text-white transition duration-300 ease-in-out px-3 py-2 rounded-md">Contact</a>
+            </div>
+    
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden flex items-center">
+                <input type="checkbox" id="menu-toggle" class="peer hidden">
+                <label for="menu-toggle" class="cursor-pointer text-[var(--forth-color)] hover:text-white transition duration-300 ease-in-out">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    
+        <!-- Mobile Navigation Menu -->
+        <div class="hidden peer-checked:block md:hidden bg-white shadow-lg">
+            <a href="#" class="block px-4 py-3 text-gray-800 hover:bg-[var(--secondary-color)] hover:text-white transition duration-300 ease-in-out">Home</a>
+            <a href="#" class="block px-4 py-3 text-gray-800 hover:bg-[var(--secondary-color)] hover:text-white transition duration-300 ease-in-out">Destinations</a>
+            <a href="#" class="block px-4 py-3 text-gray-800 hover:bg-[var(--secondary-color)] hover:text-white transition duration-300 ease-in-out">Tours</a>
+            <a href="#" class="block px-4 py-3 text-gray-800 hover:bg-[var(--secondary-color)] hover:text-white transition duration-300 ease-in-out">Contact</a>
+        </div>
+    </nav>
+
+
+
+
+
+
+    <div class="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto flex flex-col items-center md:items-start md:flex-row md:justify-center gap-8">
+        <!-- Contact Information -->
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <h2 class="text-3xl font-bold text-gray-800 sm:text-4xl mb-6">Contact Us</h2>
+          <p class="text-lg text-gray-600 mb-4">
+            We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out.
+          </p>
+          <div class="flex items-center justify-center md:justify-start mt-6">
+            <svg class="w-6 h-6 text-[var(--secondary-color)] mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89-5.26a2 2 0 012.22 0L21 8m-9 12h6a2 2 0 002-2V10a2 2 0 00-2-2h-6m-6 10h-2a2 2 0 01-2-2V10a2 2 0 012-2h2m-2 12H5m16 0h-2" />
+            </svg>
+            <span class="text-lg text-gray-600">hatem2002@live.com</span>
+          </div>
+          <div class="flex items-center justify-center md:justify-start mt-4">
+            <svg class="w-6 h-6 text-[var(--secondary-color)] mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.365 4.233A1.5 1.5 0 0118.12 6.5v11a1.5 1.5 0 01-1.755 1.268L12 17.64l-4.365 1.128A1.5 1.5 0 016 17.5v-11a1.5 1.5 0 011.635-1.267L12 6.359l4.365-1.128z" />
+            </svg>
+            <span class="text-lg text-gray-600">+216 123 123 123</span>
+          </div>
+          <div class="flex items-center justify-center md:justify-start mt-4">
+            <svg class="w-6 h-6 text-[var(--secondary-color)] mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l1.35 6.39a2 2 0 001.995 1.61h11.31a2 2 0 001.996-1.61L21 10m-9-4l7 7-1.405 1.405L12 9.83l-5.595 5.575L5 13l7-7z" />
+            </svg>
+            <span class="text-lg text-gray-600">8011 nabeul </span>
+          </div>
+        </div>
+    
+        <!-- Contact Form -->
+        <div class="w-full md:w-1/2 bg-white p-6 shadow-lg rounded-lg">
+          <form action="#" method="POST">
+            <div class="mb-4">
+              <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+              <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary" required>
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary" required>
+            </div>
+            <div class="mb-4">
+              <label for="destination" class="block text-sm font-medium text-gray-700">Destination of Interest</label>
+              <input type="text" id="destination" name="destination" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+            </div>
+            <div class="mb-4">
+              <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+              <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary"></textarea>
+            </div>
+            <div>
+              <button type="submit" class="w-full py-2 px-4 text-white bg-[var(--secondary-color)] hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary rounded-lg shadow-lg text-base font-medium">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+    <!-- Footer container -->
+<footer class="bg-gray-100 text-white text-center">
+  <div class="container mx-auto pt-9 px-6">
+      <!-- Social media icons container -->
+      <div class="mb-6 flex justify-center space-x-4">
+          <!-- Facebook Icon -->
+          <a href="#!" type="button"
+              class="rounded-full bg-transparent p-3 text-[var(--secondary-color)] transition duration-150 ease-in-out  focus:outline-none focus:ring-0"
+              data-twe-ripple-init>
+              <span class="w-5 h-5 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 320 512">
+                      <path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+                  </svg>
+              </span>
+          </a>
+
+          <!-- Twitter Icon -->
+          <a href="#!" type="button"
+              class="rounded-full bg-transparent p-3 text-[var(--secondary-color)] transition duration-150 ease-in-out  focus:outline-none focus:ring-0"
+              data-twe-ripple-init>
+              <span class="w-5 h-5 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                      <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                  </svg>
+              </span>
+          </a>
+
+          <!-- Instagram Icon -->
+          <a href="#!" type="button"
+              class="rounded-full bg-transparent p-3 text-[var(--secondary-color)] transition duration-150 ease-in-out  focus:outline-none focus:ring-0"
+              data-twe-ripple-init>
+              <span class="w-5 h-5 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 488 512">
+                      <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
+                  </svg>
+              </span>
+          </a>
+
+     
+          
+      </div>
+      <!-- Footer text -->
+      <p class="mb-0 text-sm text-[var(--secondary-color)]">© 2024 Travel agency. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+    
+</body>
+</html>
